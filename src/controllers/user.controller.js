@@ -98,6 +98,7 @@ const actualizarDinos = async (req, res) => {
       "animal_6",
       "animal_7",
       "animal_8",
+      "animal_9",
     ];
     if (!dinosValidos.includes(dinoNombre)) {
       return res.status(400).json({

@@ -53,6 +53,10 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    animal_9: {
+      type: Boolean,
+      default: false,
+    },
     juegoVecesCompletado: {
       type: Number,
       default: 0,
