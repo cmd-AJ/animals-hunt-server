@@ -128,28 +128,6 @@ const actualizarDinos = async (req, res) => {
     // Verificar si todos los animals están en true
     const todosDinosTrue = dinosValidos.every((dino) => usuario[dino] === true);
 
-    if (todosDinosTrue) {
-      // Reiniciar los animals a false y aumentar juegoVecesCompletado
-      const reiniciarDinos = dinosValidos.reduce((acc, dino) => {
-        acc[dino] = false;
-        return acc;
-      }, {});
-
-      const usuarioActualizado = await User.findByIdAndUpdate(
-        id,
-        {
-          $set: reiniciarDinos,
-          $inc: { juegoVecesCompletado: 1 }, // Incrementar juegoVecesCompletado en 1
-        },
-        { new: true, runValidators: true }
-      );
-
-      return res.status(200).json({
-        success: true,
-        message: `JUEGO COMPLETADO`,
-        usuario: usuarioActualizado,
-      });
-    }
 
     res.status(200).json({
       success: true,
