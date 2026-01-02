@@ -191,6 +191,7 @@ const obtenerDinos = async (req, res) => {
 
     // Extraer los animals del usuario
     const dinos = {
+      animal_0: usuario.animal_0,
       animal_1: usuario.animal_1,
       animal_2: usuario.animal_2,
       animal_3: usuario.animal_3,
@@ -199,6 +200,7 @@ const obtenerDinos = async (req, res) => {
       animal_6: usuario.animal_6,
       animal_7: usuario.animal_7,
       animal_8: usuario.animal_8,
+      animal_9: usuario.animal_9,
     };
 
     res.status(200).json({
